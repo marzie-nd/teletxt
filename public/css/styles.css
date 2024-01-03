@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'European Teletext';
+    src: url('EuropeanTeletext.eot');
+    src: url('EuropeanTeletext.eot?#iefix') format('embedded-opentype'),
+        url('EuropeanTeletext.woff2') format('woff2'),
+        url('EuropeanTeletext.woff') format('woff'),
+        url('EuropeanTeletext.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
