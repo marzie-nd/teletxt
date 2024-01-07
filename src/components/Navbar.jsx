@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="logo">TeLeTxt</div>
       </div>
       <nav className='navItems'>
-        <span>Chats</span>
+        <span style={{backgroundColor: "#A9B388"}}>Chats</span>
         <span>Contacts</span>
       </nav>
     </div>
