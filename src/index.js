@@ -2,10 +2,10 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import './index.css';
-
 import App from './App';
-import { Chats, Signin, Signup } from './components';
+import Home from './pages/Home';
+import Signin from './pages/Signin';
+import Signup from './pages/Signup';
 
 const root = createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +15,7 @@ root.render(
                 <Route path="/" element={ <App /> } />
                 <Route path="/signin" element={ <Signin /> } />
                 <Route path="/signup" element={ <Signup /> } />
-                <Route path="/chats" element={ <Chats /> } />
+                <Route path="/home" element={ <Home /> } />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

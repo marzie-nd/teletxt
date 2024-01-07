@@ -1,0 +1,169 @@
+.App {
+  height: calc(100vh - 10vw); // **************************//
+  background-color: #fefae0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vw;
+  gap: 5vh;
+
+  .logo {
+    font-size: 40px;
+    color: #5f6f52;
+    font-weight: bold;
+  }
+
+  img {
+    border-radius: 50%;
+  }
+
+  p {
+    text-align: center;
+    font-size: 18px;
+    max-width: 500px;
+  }
+
+  button {
+    background-color: #c4661f;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+  }
+}
+.signup {
+  background-color: #fefae0;
+  height: 100vh;
+  padding: 10px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 40px;
+
+    .logo {
+      font-size: 40px;
+      color: #5f6f52;
+      font-weight: bold;
+    }
+
+    .title {
+      font-size: 30px;
+    }
+
+    input {
+      width: 300px;
+      height: 4vh;
+      background-color: #fefae0;
+      border: none;
+      border-bottom: 1px solid #5f6f52;
+      color: #a9b388;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    button {
+      background-color: #c4661f;
+      color: white;
+      font-size: 18px;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 8px;
+      margin-top: 40px;
+    }
+  }
+}
+
+.signin {
+  background-color: #fefae0;
+  height: 100vh;
+  padding: 10px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 40px;
+
+    .logo {
+      font-size: 40px;
+      color: #5f6f52;
+      font-weight: bold;
+    }
+
+    .title {
+      font-size: 30px;
+    }
+
+    input {
+      width: 300px;
+      height: 4vh;
+      background-color: #fefae0;
+      border: none;
+      border-bottom: 1px solid #5f6f52;
+      color: #a9b388;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    button {
+      background-color: #c4661f;
+      color: white;
+      font-size: 18px;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 8px;
+      margin-top: 40px;
+    }
+  }
+}
+
+.home {
+  background-color: #fefae0;
+  height: 100vh;
+
+  .navbar {
+    background-color: #5f6f52;
+
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        gap: 2rem;
+
+      img {
+        height: 3vh;
+      }
+
+      .logo {
+        font-size: 30px;
+        color: white;
+        font-weight: bold;
+      }
+    }
+
+    .navItems {
+        color: white;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            width: 50%;
+            border: 1px solid red;
+        }
+    }
+
+  }
+
+  .search {
+  }
+
+  .chats {
+  }
+}

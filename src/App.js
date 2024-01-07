@@ -1,47 +1,26 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Container } from "@mui/material";
+import Img from './img/logo.png';
 
-import { PURPLE2 } from "./helpers/colors";
-
-import "./App.css";
+import "./styles.scss";
 
 const App = () => {
   return (
-    <Container
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        fontSize: "larger",
-        paddingLeft: '10vw',
-        paddingRight: '10vw'
-      }}
-      className="App"
-    >
-      <h1>TeLeTxt</h1>
-      <img
-        src="https://via.placeholder.com/200"
-        width={"200px"}
-        alt=""
-        style={{ borderRadius: "50%" }}
-      />
+    <div className="App">
+      <div className="logo">TeLeTxt</div>
+      <img src={Img} width="200px" alt="logo" />
 
-      <p style={{ textAlign: "center" }}>
+      <p>
         Exercitation qui in nisi ullamco ullamco ad esse fugiat pariatur ex ex
         ex. Laboris aliquip est reprehenderit reprehenderit quis aliquip id enim
         labore.
+        Laboris aliquip est reprehenderit reprehenderit quis aliquip id enim
+        labore.
       </p>
       <Link to="/signup">
-        <Button
-          size="large"
-          variant="contained"
-          sx={{ backgroundColor: PURPLE2, height: "3rem" }}
-        >
-          Start Messaging
-        </Button>
+        <button>Start Messaging</button>
       </Link>
-    </Container>
+    </div>
   );
 };
 
