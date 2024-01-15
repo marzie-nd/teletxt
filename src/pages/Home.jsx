@@ -1,17 +1,16 @@
-import Navbar from '../components/Navbar';
-import Search from '../components/Search';
-import Chats from '../components/Chats';
-
-import '../styles.scss';
+import "../styles.scss";
+import Chat from "../components/Chat";
+import Sidebar from "../components/Sidebar";
 
 const Home = () => {
   return (
-    <div className='home'>
-      <Navbar />
-      <Search />
-      <Chats />
+    <div className="home">
+      <div className="wrapper">
+        <Sidebar />
+        <Chat />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

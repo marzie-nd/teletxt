@@ -4,13 +4,14 @@ import Input from './Input';
 const Chat = () => {
   return (
     <div className="chat">
-      <div className="chatInfo">
+      chat
+      {/* <div className="chatInfo">
         <span>Milad</span>
       </div>
       <Messages />
-      <Input />
+      <Input /> */}
     </div>
   )
 }
 
-export default Chat
+export default Chat;
