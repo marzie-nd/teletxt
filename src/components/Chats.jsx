@@ -1,35 +1,11 @@
+import Users from "./Users";
+
 const Chats = () => {
   return (
-    <div className='chats'>
-      <div className="userChat">
-        <div className="userChatInfo">
-          <div className="user">Ahmad</div>
-          <p>ok, see you</p>
-        </div>
-      </div>
-
-      <div className="userChat">
-        <div className="userChatInfo">
-          <div className="user">Milad</div>
-          <p>I'll call you later</p>
-        </div>
-      </div>
-
-      <div className="userChat">
-        <div className="userChatInfo">
-          <div className="user">maman</div>
-          <p>i'll be there in a minute</p>
-        </div>
-      </div>
-
-      <div className="userChat">
-        <div className="userChatInfo">
-          <div className="user">Dr. Dr</div>
-          <p>yes</p>
-        </div>
-      </div>
+    <div className="chats">
+      <Users />
     </div>
-  )
-}
+  );
+};
 
-export default Chats
+export default Chats;
