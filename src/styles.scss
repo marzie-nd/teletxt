@@ -225,36 +225,40 @@
       }
 
       .chats {
-        .userChat {
-          padding: 10px;
-          display: flex;
-          align-items: center;
-          color: #783d19;
-          cursor: pointer;
-          border-bottom: 1px solid #783d193d;
-
-          &:hover {
-            background-color: #f8ecdd;
-          }
-
-          .userChatInfo {
+        .users {
+          .userChat {
+            padding: 10px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 20px;
+            color: #783d19;
+            cursor: pointer;
+            border-bottom: 1px solid #783d193d;
 
-            .user {
-              font-size: 16px;
-
+            &:hover {
+              background-color: #f8ecdd;
             }
 
-            p {
-              color: #783d19a2;
-              padding-left: 10px;
+            .userChatInfo {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 20px;
+
+              .user {
+                font-size: 16px;
+              }
+
+              p {
+                color: #783d19a2;
+                padding-left: 10px;
+              }
             }
           }
         }
       }
+    }
+    .content {
+      
     }
 
     .chat {
@@ -291,8 +295,8 @@
           display: flex;
           flex-direction: column;
           p {
-            background-color: #FFF7C1;
-            color: #C4661F;
+            background-color: #fff7c1;
+            color: #c4661f;
             padding: 10px 20px;
             border-radius: 0px 10px 10px 10px;
             max-width: max-content;

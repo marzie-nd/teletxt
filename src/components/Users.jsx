@@ -1,16 +1,19 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
-const Users = () => {
+const Users = ({ onchatToggle }) => {
+
   return (
-    <div className='users'>
-      <div className="userChat">
+    <div className="users">
+      <Link to={{}} onClick={onchatToggle}>
+        <div className="userChat">
           <div className="userChatInfo">
             <div className="user">Ahmad</div>
             <p>ok, see you</p>
           </div>
-      </div>
+        </div>
+      </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Users
+export default Users;
