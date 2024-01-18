@@ -1,4 +1,4 @@
-import { Message } from "stream-chat-react";
+import Message from './Message';
 
 const Messages = () => {
   return (
@@ -8,7 +8,6 @@ const Messages = () => {
       <Message />
       <Message />
       <Message />
-      <Message /> 
     </div>
   )
 }

@@ -24,8 +24,8 @@ const Chats = () => {
 
       <div className="userChat">
         <div className="userChatInfo">
-          <div className="user">Fateme</div>
-          <p>:DD</p>
+          <div className="user">Dr. Dr</div>
+          <p>yes</p>
         </div>
       </div>
     </div>
