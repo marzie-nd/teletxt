@@ -155,6 +155,11 @@
     display: flex;
     overflow: hidden;
     border-radius: 10px;
+    @include mobile {
+      height: 100vh;
+      width: 100vw;
+      border-radius: 0;
+    }
 
     .sidebar {
       flex: 1;
@@ -254,6 +259,9 @@
     .chat {
       flex: 2;
       border: 1px solid #a9b388;
+      @include mobile {
+        display: none;
+      }
 
       .chatInfo {
         height: 50px;
