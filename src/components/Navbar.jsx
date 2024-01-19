@@ -1,4 +1,5 @@
-import Menu from '../img/menu.png';
+import { NavLink } from "react-router-dom";
+import Menu from "../img/menu.png";
 
 const Navbar = () => {
   return (
@@ -7,12 +8,16 @@ const Navbar = () => {
         <img src={Menu} alt="Menu" width="30vw" />
         <div className="logo">TeLeTxt</div>
       </div>
-      <nav className='navItems'>
-        <span style={{backgroundColor: "#A9B388"}}>Chats</span>
-        <span>Contacts</span>
-      </nav>
+      <ul className="navItems">
+        <li>
+          <NavLink to='/chats'>Chats</NavLink>
+        </li>
+        <li>
+          <NavLink to='/contacts'>Contacts</NavLink>
+        </li>
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

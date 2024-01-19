@@ -1,66 +1,68 @@
-@mixin mobile {
-  @media screen and (max-width: 480px) {
-    @content;
+@media only screen and (max-width: 480px) {
+  .container {
+    max-width: 100%;
   }
 }
-
-@mixin tablet {
-  @media screen and (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin laptop {
-  @media screen and (max-width: 1200px) {
-    @content;
-  }
-}
-
 .App {
   height: 100vh;
-  background-color: #fefae0;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vw;
-  gap: 5vh;
 
-  .logo {
-    font-size: 40px;
-    color: #5f6f52;
-    font-weight: bold;
-  }
+  .container {
+    height: 100%;
+    width: 100%;
+    max-width: 512px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    background-color: #fefae0;
+    padding: 3rem 1rem;
+    box-shadow: 0.3em 0.3em 2em rgb(155 155 155 / 60%);
 
-  img {
-    border-radius: 50%;
-  }
-
-  p {
-    text-align: center;
-    font-size: 18px;
-    max-width: 500px;
-  }
-
-  button {
-    background-color: #c4661f;
-    color: white;
-    font-size: 18px;
-    border: none;
-    padding: 15px 25px;
-    border-radius: 8px;
+    .logo {
+      font-size: 40px;
+      color: #5f6f52;
+      font-weight: bold;
+    }
+    img {
+      border-radius: 50%;
+    }
+    p {
+      text-align: center;
+      font-size: 18px;
+      max-width: 500px;
+    }
+    button {
+      background-color: #c4661f;
+      color: white;
+      font-size: 18px;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 8px;
+    }
   }
 }
 .signup {
-  background-color: #fefae0;
   height: 100vh;
-  padding: 10px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .container {
+    height: 100%;
+    width: 100%;
+    max-width: 512px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
-    margin-top: 40px;
+    background-color: #fefae0;
+    box-shadow: 0.3em 0.3em 2em rgb(155 155 155 / 60%);
+    padding-top: 3em;
+    gap: 1em;
 
     .logo {
       font-size: 40px;
@@ -70,43 +72,59 @@
     }
 
     .title {
-      font-size: 30px;
+      font-size: 1.5em;
+      color: #5f6f52;
+      padding-bottom: 1em;
     }
 
-    input {
-      width: 300px;
-      height: 4vh;
-      background-color: #fefae0;
-      border: none;
-      border-bottom: 1px solid #5f6f52;
-      color: #a9b388;
-      font-size: 1rem;
-      outline: none;
-    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+      gap: 1.5rem;
 
-    button {
-      background-color: #c4661f;
-      color: white;
-      font-size: 18px;
-      border: none;
-      padding: 15px 25px;
-      border-radius: 8px;
-      margin-top: 40px;
+      input {
+        width: 300px;
+        height: 4vh;
+        background-color: #fefae0;
+        border: none;
+        border-bottom: 1px solid #5f6f52;
+        color: #a9b388;
+        font-size: 1rem;
+        outline: none;
+      }
+
+      button {
+        background-color: #c4661f;
+        color: white;
+        font-size: 18px;
+        border: none;
+        padding: 15px 25px;
+        border-radius: 8px;
+        margin-top: 40px;
+      }
     }
   }
 }
-
 .signin {
-  background-color: #fefae0;
   height: 100vh;
-  padding: 10px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .container {
+    height: 100%;
+    width: 100%;
+    max-width: 512px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
-    margin-top: 40px;
+    background-color: #fefae0;
+    box-shadow: 0.3em 0.3em 2em rgb(155 155 155 / 60%);
+    padding-top: 3em;
+    gap: 1em;
 
     .logo {
       font-size: 40px;
@@ -116,54 +134,60 @@
     }
 
     .title {
-      font-size: 30px;
+      font-size: 1.5em;
+      color: #5f6f52;
+      padding-bottom: 1em;
     }
 
-    input {
-      width: 300px;
-      height: 4vh;
-      background-color: #fefae0;
-      border: none;
-      border-bottom: 1px solid #5f6f52;
-      color: #a9b388;
-      font-size: 1rem;
-      outline: none;
-    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+      gap: 1.5rem;
 
-    button {
-      background-color: #c4661f;
-      color: white;
-      font-size: 18px;
-      border: none;
-      padding: 15px 25px;
-      border-radius: 8px;
-      margin-top: 40px;
+      input {
+        width: 300px;
+        height: 4vh;
+        background-color: #fefae0;
+        border: none;
+        border-bottom: 1px solid #5f6f52;
+        color: #a9b388;
+        font-size: 1rem;
+        outline: none;
+      }
+
+      button {
+        background-color: #c4661f;
+        color: white;
+        font-size: 18px;
+        border: none;
+        padding: 15px 25px;
+        border-radius: 8px;
+        margin-top: 40px;
+      }
     }
   }
 }
-
 .home {
   height: 100vh;
+  width: 100vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   .wrapper {
-    background-color: #fefae0;
-    height: 80%;
-    width: 65%;
+    height: 100%;
+    width: 100%;
+    max-width: 512px;
     display: flex;
-    overflow: hidden;
-    border-radius: 10px;
-    @include mobile {
-      height: 100vh;
-      width: 100vw;
-      border-radius: 0;
-    }
-
+    flex-direction: column;
+    align-items: center;
+    background-color: #fefae0;
+    box-shadow: 0.3em 0.3em 2em rgb(155 155 155 / 60%);
+    
     .sidebar {
-      flex: 1;
-      border: 1px solid #a9b388;
+      width: 100%;
 
       .navbar {
         background-color: #5f6f52;
@@ -187,17 +211,29 @@
         }
 
         .navItems {
-          color: white;
           font-size: 20px;
+          padding: 0;
           display: flex;
-          justify-content: space-between;
-          align-items: center;
+          justify-content: center;
+          margin-bottom: 0;
+          gap: 1rem;
 
-          span {
-            width: 50%;
+          li {
+            width: 35%;
             text-align: center;
-            padding: 10px;
             letter-spacing: 2px;
+            list-style-type: none;
+            padding: 10px;
+
+            &:hover,
+            &:active {
+              background-color: #a9b388;
+            }
+
+            a {
+              color: white;
+              text-decoration: none;
+            }
           }
         }
       }
@@ -261,9 +297,6 @@
     .chat {
       flex: 2;
       border: 1px solid #5f6f52;
-      @include mobile {
-        display: none;
-      }
 
       .chatInfo {
         height: 50px;
