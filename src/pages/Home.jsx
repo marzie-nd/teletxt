@@ -15,10 +15,8 @@ const Home = () => {
     <div className="home">
       <div className="wrapper">
         <Sidebar />
-        <div className="content">
-          <Users onChatToggle={handleChatToggle} />
-          {isChatOpen && <Chat />}
-        </div>
+          <Chat onChatToggle={handleChatToggle} />
+          {/* {isChatOpen && <Chat />} */}
       </div>
     </div>
   );

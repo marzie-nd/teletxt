@@ -257,13 +257,10 @@
         }
       }
     }
-    .content {
-      
-    }
 
     .chat {
       flex: 2;
-      border: 1px solid #a9b388;
+      border: 1px solid #5f6f52;
       @include mobile {
         display: none;
       }
