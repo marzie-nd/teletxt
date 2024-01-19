@@ -233,21 +233,21 @@
             color: #783d19;
             cursor: pointer;
             border-bottom: 1px solid #783d193d;
-  
+
             &:hover {
               background-color: #f8ecdd;
             }
-  
+
             .userChatInfo {
               display: flex;
               justify-content: center;
               align-items: center;
               gap: 20px;
-  
+
               .user {
                 font-size: 16px;
               }
-  
+
               p {
                 color: #783d19a2;
                 padding-left: 10px;
@@ -256,6 +256,9 @@
           }
         }
       }
+    }
+    .content {
+      
     }
 
     .chat {

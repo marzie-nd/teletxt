@@ -1,12 +1,13 @@
+import { Route, Routes } from "react-router-dom";
 import Users from "./Users";
+
 
 const Chats = () => {
   return (
     <div className="chats">
-      <Users />
-      <Users />
-      <Users />
-      <Users />
+      <Routes>
+        <Route index element={<Users />} />
+      </Routes>
     </div>
   );
 };
