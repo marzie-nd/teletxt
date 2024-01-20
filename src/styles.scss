@@ -185,7 +185,7 @@
     align-items: center;
     background-color: #fefae0;
     box-shadow: 0.3em 0.3em 2em rgb(155 155 155 / 60%);
-    
+
     .sidebar {
       width: 100%;
 
@@ -194,29 +194,43 @@
 
         .container {
           display: flex;
-          align-items: center;
-          padding: 15px;
-          gap: 1.5rem;
+            align-items: center;
+            padding: 15px;
+            gap: 1.5rem;
 
-          img {
-            height: 3vh;
-          }
+            img {
+              height: 3vh;
+            }
 
-          .logo {
-            font-size: 30px;
-            font-weight: bold;
-            color: white;
-            letter-spacing: 5px;
-          }
+            .logo {
+              font-size: 30px;
+              font-weight: bold;
+              color: white;
+              letter-spacing: 5px;
+            }
+
         }
 
-        .navItems {
+        .navItem {
           font-size: 20px;
-          padding: 0;
+          padding: 1rem;
           display: flex;
-          justify-content: center;
-          margin-bottom: 0;
-          gap: 1rem;
+          justify-content: space-around;
+          align-items: center;
+
+          .navLink {
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+
+            &:hover, &:active {
+              background-color: #a9b388;
+            }
+
+            .navName {
+
+            }
+          }
 
           li {
             width: 35%;

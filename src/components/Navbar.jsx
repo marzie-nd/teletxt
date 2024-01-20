@@ -1,21 +1,31 @@
 import { NavLink } from "react-router-dom";
 import Menu from "../img/menu.png";
 
-const Navbar = () => {
+const Navbar = ({ children }) => {
+  const navItem = [
+    { path: "/chats", name: "Chats" },
+    { path: "/contacts", name: "Contacts" },
+  ];
+
   return (
     <div className="navbar">
       <div className="container">
         <img src={Menu} alt="Menu" width="30vw" />
         <div className="logo">TeLeTxt</div>
       </div>
-      <ul className="navItems">
-        <li>
-          <NavLink to='/chats'>Chats</NavLink>
-        </li>
-        <li>
-          <NavLink to='/contacts'>Contacts</NavLink>
-        </li>
-      </ul>
+      <div className="navItem">
+        {navItem.map((item, index) => (
+          <NavLink
+            to={{}}
+            key={index}
+            className="navLink"
+          >
+            <div>{item.name}</div>
+          </NavLink>
+        ))}
+      </div>
+
+      <main>{children}</main>
     </div>
   );
 };
