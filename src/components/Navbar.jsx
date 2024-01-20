@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Menu from "../img/menu.png";
 
-const Navbar = ({ children }) => {
+const Navbar = ({children}) => {
   const navItem = [
     { path: "chats", name: "Chats" },
     { path: "contacts", name: "Contacts" },
@@ -25,7 +25,10 @@ const Navbar = ({ children }) => {
         ))}
       </div>
 
-      <main>{children}</main>
+      <main>
+        {children}
+      </main>
+      
     </div>
   );
 };

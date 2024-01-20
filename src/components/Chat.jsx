@@ -1,11 +1,11 @@
 import Messages from './Messages';
 import Input from './Input';
 
-const Chat = () => {
+const Chat = ({username}) => {
   return (
     <div className="chat">
       <div className="chatInfo">
-        <span>Milad</span>
+        <span>{username}</span>
       </div>
       <Messages />
       <Input />

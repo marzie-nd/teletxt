@@ -1,26 +1,17 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Users = ({ onchatToggle }) => {
+const Users = ({ onChatToggle, username }) => {
 
   return (
     <div className="users">
-      <Link to={{}} onClick={onchatToggle}>
+      <NavLink to={username} onClick={onChatToggle} className='navLink'>
         <div className="userChat">
           <div className="userChatInfo">
-            <div className="user">Ahmad</div>
+            <div className="user">{username}</div>
             <p>ok, see you</p>
           </div>
         </div>
-      </Link>
-
-      <Link to={{}} onClick={onchatToggle}>
-        <div className="userChat">
-          <div className="userChatInfo">
-            <div className="user">maman</div>
-            <p>miss you</p>
-          </div>
-        </div>
-      </Link>
+      </NavLink>
     </div>
   );
 };
