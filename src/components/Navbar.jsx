@@ -3,8 +3,8 @@ import Menu from "../img/menu.png";
 
 const Navbar = ({ children }) => {
   const navItem = [
-    { path: "/chats", name: "Chats" },
-    { path: "/contacts", name: "Contacts" },
+    { path: "chats", name: "Chats" },
+    { path: "contacts", name: "Contacts" },
   ];
 
   return (
@@ -16,7 +16,7 @@ const Navbar = ({ children }) => {
       <div className="navItem">
         {navItem.map((item, index) => (
           <NavLink
-            to={{}}
+            to={item.path}
             key={index}
             className="navLink"
           >
