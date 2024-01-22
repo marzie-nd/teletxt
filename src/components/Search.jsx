@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const Search = () => {
 
+  const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -9,16 +11,8 @@ const Search = () => {
     event.preventDefault();
     setLoading(true);
     setQuery(event.target.value);
-    getQuery(event.target.value);
   }
 
-  const getQuery = () => {
-    try {
-      
-    } catch (error) {
-      setQuery('');
-    }
-  }
 
   return (
     <div className='search'>
@@ -26,7 +20,7 @@ const Search = () => {
         <input 
         type="text" 
         placeholder='Search...'
-        value={query}
+        value={searchParams.get("filter") || ""}
         onChange={onSearch}
         />
       </div>

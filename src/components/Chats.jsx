@@ -11,8 +11,15 @@ const Chats = () => {
   return (
     <div className="chats">
       <Routes>
-        <Route index element={<Users username="ahmad" onChatToggle={onChatToggle} />} />
-        <Route path="/:username" element={<Chat />} />
+        <Route 
+          index 
+          element={<Users username="ahmad" 
+          onChatToggle={onChatToggle} />}
+        />
+        <Route 
+          path="/:username" 
+          element={<Chat />}
+        />
       </Routes>
     </div>
   );

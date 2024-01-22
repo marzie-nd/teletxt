@@ -256,6 +256,26 @@
         }
       }
 
+      .userList {
+        display: flex;
+        flex-direction: column;
+        
+
+        .users {
+          border-bottom: 1px solid #d498735d;
+          height: 4em;
+          display: flex;
+          align-items: center;
+          padding-left: 1rem;
+          color: #783D19;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #f8f2dd;
+          }
+        }
+      }
+
       .chats {
         .users {
 

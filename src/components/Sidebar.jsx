@@ -1,19 +1,22 @@
 import Navbar from "./Navbar";
 import Search from "./Search";
-import { Routes, Route } from "react-router-dom";
-import Chats from "./Chats";
-import Contacts from "./Contacts";
+import UsersList from "./UsersList";
+import { useState } from "react";
 
 const Sidebar = () => {
+
+  const users = ['Ahmad', 'maman', 'milad'];
+  const [selectedUser, setSelectedUser] = useState([users[0]]);
+
+  const handleUserChange = (user) => {
+    setSelectedUser(user);
+  }
   return (
     <div className="sidebar">
       <Navbar />
       <Search />
-      <Chats />
-      {/* <Routes>
-        <Route path="chats" element={<Chats />} />
-        <Route path="contacts" element={<Contacts />} />
-      </Routes> */}
+      <UsersList users={users} selectedUser={selectedUser} onUserChange={handleUserChange} />
+      
     </div>
   );
 };
