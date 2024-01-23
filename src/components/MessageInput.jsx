@@ -17,8 +17,9 @@ const MessageInput = ({onSendMessage}) => {
         type='text'
         value={newMessage}
         onChange={(e) => setNewMessage(e.target.value)}
-        onKeyPress={handleKeyPress}
+        onKeyDown={handleKeyPress}
     />
+    <button onClick={() => onSendMessage(newMessage)}>Send</button>
     </div>
   )
 }

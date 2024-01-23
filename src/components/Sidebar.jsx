@@ -11,6 +11,12 @@ const Sidebar = () => {
   const [chatHistory, setChatHistory] = useState({});
 
   const handleUserChange = (user) => {
+    if (!chatHistory[user]) {
+      setChatHistory({
+        ...chatHistory,
+        [user]: []
+      })
+    }
     setSelectedUser(user);
   }
 
