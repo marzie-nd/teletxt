@@ -1,24 +1,23 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import ChatHistory from './ChatHistory';
+import MessageInput from './MessageInput';
 
-const ChatBox = ({user}) => {
+const ChatBox = ({user, chatHistory, onSendMessage}) => {
 
     const [messages, setMessages] = useState([]);
+
+    useEffect(() => {
+      setMessages(chatHistory[user] || [user]);
+    }, [user, chatHistory]);
 
   return (
     <div className='chatbox'>
       <div className='chatUser'>
         {user}
       </div>
-      <div className='displayMessage'>
-        {
-            messages.map((message, index) => (
-                <div key={index}>
-                    {message.user}: {message.text}
-                </div>
-            ))
-        }
-      </div>
+      <ChatHistory message={messages} user={user} />
+      <MessageInput onSendMessage={(message) => onSendMessage(message, user)} />
     </div>
   )
 }
