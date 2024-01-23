@@ -1,5 +1,4 @@
 import ChatPage from "../pages/ChatPage";
-import ChatBox from "./ChatBox";
 import Navbar from "./Navbar";
 import Search from "./Search";
 import UsersList from "./UsersList";
@@ -26,11 +25,15 @@ const Sidebar = () => {
       ...chatHistory,
       [user]: updateMessage,
     });
-  };
+  };  
+
+  const handleBackButton = () => {
+    setSelectedUser(null);
+  }
 
   return (
     <div className="sidebar">
-      <div>
+      <div className="showChatUserSection">
         {selectedUser ? (
           <ChatPage
             selectedUser={selectedUser}
@@ -38,9 +41,10 @@ const Sidebar = () => {
             onUserChange={handleUserChange}
             chatHistory={chatHistory}
             onSendMessage={handleSendMessage}
+            onBack={handleBackButton}
           />
         ) : (
-          <div>
+          <div className="showUsersSection">
             <Navbar />
             <Search />
             <UsersList users={users} onUserChange={handleUserChange} />

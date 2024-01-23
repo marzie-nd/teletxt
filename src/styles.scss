@@ -189,96 +189,124 @@
     .sidebar {
       width: 100%;
 
-      .navbar {
-        background-color: #5f6f52;
+      .showUsersSection {
+        .navbar {
+          background-color: #5f6f52;
 
-        .container {
-          display: flex;
-          align-items: center;
-          padding: 15px;
-          gap: 1.5rem;
+          .container {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            gap: 1.5rem;
+            border-bottom: 1px solid #a9b388;
+
+            img {
+              height: 3vh;
+            }
+
+            .logo {
+              font-size: 30px;
+              font-weight: bold;
+              color: white;
+              letter-spacing: 5px;
+            }
+          }
+
+          .navItem {
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+
+            .navLink {
+              padding: 0.75rem 10%;
+              text-align: center;
+              text-decoration: none;
+              color: white;
+              cursor: pointer;
+
+              &:hover,
+              &:active {
+                background-color: #a9b388;
+              }
+            }
+          }
+        }
+
+        .search {
           border-bottom: 1px solid #a9b388;
 
-          img {
-            height: 3vh;
-          }
+          .searchForm {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
 
-          .logo {
-            font-size: 30px;
-            font-weight: bold;
-            color: white;
-            letter-spacing: 5px;
+            input {
+              background-color: transparent;
+              border: none;
+              outline: none;
+              width: 100%;
+              color: #783d19;
+              font-size: 18px;
+
+              &::placeholder {
+                color: #ad724da9;
+              }
+            }
           }
         }
 
-        .navItem {
-          font-size: 20px;
+        .userList {
           display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 3rem;
+          flex-direction: column;
 
-          .navLink {
-            padding: 0.75rem 10%;
-            text-align: center;
-            text-decoration: none;
-            color: white;
+          .userItem {
+            border-bottom: 1px solid #d498735d;
+            height: 4em;
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            color: #783d19;
             cursor: pointer;
 
-            &:hover,
-            &:active {
-              background-color: #a9b388;
+            &:hover {
+              background-color: #f8f2dd;
             }
           }
         }
       }
 
-      .search {
-        border-bottom: 1px solid #a9b388;
+      .showChatUserSection {
 
-        .searchForm {
-          padding: 10px;
-          display: flex;
-          justify-content: space-between;
+        .chatPage {
 
-          input {
-            background-color: transparent;
-            border: none;
-            outline: none;
-            width: 100%;
-            color: #783d19;
-            font-size: 18px;
+          .navbarChat {
+            display: flex;
+            align-items: center;
+            background-color: #5f6f52;
+            height: 4rem;
+            gap: 2em;
+            color: white;
+            font-size: 1.2rem;
 
-            &::placeholder {
-              color: #ad724da9;
+            .backButton {
+              background-color: transparent;
+              border: none;
+              
+              img {
+                width: 25px;
+                padding-left: 0.7rem;
+                cursor: pointer;
+              }
             }
-          }
-        }
-      }
 
-      .userList {
-        display: flex;
-        flex-direction: column;
-        
-
-        .users {
-          border-bottom: 1px solid #d498735d;
-          height: 4em;
-          display: flex;
-          align-items: center;
-          padding-left: 1rem;
-          color: #783D19;
-          cursor: pointer;
-
-          &:hover {
-            background-color: #f8f2dd;
           }
         }
       }
 
       .chats {
         .users {
-
           .navLink {
             text-decoration: none;
           }
@@ -290,7 +318,6 @@
             color: #783d19;
             cursor: pointer;
             border-bottom: 1px solid #783d193d;
-            
 
             &:hover {
               background-color: #f8f2dd;

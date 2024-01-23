@@ -6,7 +6,8 @@ const UsersList = ({ users, selectedUser, onUserChange }) => {
       {users.map((user) => (
         <div
           key={user}
-          className={`userItem ${user === selectedUser ? "selected" : ""}`}
+          className="userItem"
+          // className={`userItem ${user === selectedUser ? "selected" : ""}`}
           onClick={() => onUserChange(user)}
         >
           {user}
