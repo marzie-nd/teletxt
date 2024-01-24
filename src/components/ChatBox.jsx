@@ -12,9 +12,6 @@ const ChatBox = ({user, chatHistory, onSendMessage}) => {
 
   return (
     <div className='chatbox'>
-      <div className='chatUser'>
-        {user}
-      </div>
       <ChatHistory message={messages} user={user} />
       <MessageInput onSendMessage={(message) => onSendMessage(message, user)} />
     </div>
