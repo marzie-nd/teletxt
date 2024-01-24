@@ -1,0 +1,23 @@
+.container {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+        color: #5f6f52;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        padding-bottom: 1em;
+        color: #5f6f52;
+    }
+
+}

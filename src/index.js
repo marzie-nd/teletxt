@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import App from './App';
-import Home from './pages/Home';
+import Chats from './pages/Chats';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 
@@ -15,7 +15,7 @@ root.render(
                 <Route path="/" element={ <App /> } />
                 <Route path="/signin" element={ <Signin /> } />
                 <Route path="/signup" element={ <Signup /> } />
-                <Route path="/home" element={ <Home /> } />
+                <Route path="/chats" element={ <Chats /> } />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

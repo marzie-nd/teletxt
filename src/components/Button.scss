@@ -1,0 +1,21 @@
+button {
+    background-color: #c4661f;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #b3561a;
+    /* Slightly darker shade for hover */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #c4661f;
+    /* Focus outline */
+}

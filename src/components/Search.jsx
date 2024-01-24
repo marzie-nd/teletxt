@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-
+import "./Search.scss"
 const Search = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -16,14 +16,7 @@ const Search = () => {
 
   return (
     <div className='search'>
-      <div className="searchForm">
-        <input 
-        type="text" 
-        placeholder='Search...'
-        value={searchParams.get("filter") || ""}
-        onChange={onSearch}
-        />
-      </div>
+      <input type="text" placeholder='Search...'/>
     </div>
   )
 }

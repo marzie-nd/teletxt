@@ -1,0 +1,24 @@
+.chatItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    border-bottom: 0.5px solid lightgray;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chatItem:hover {
+    background-color: #f5f5f5; /* Light grey background on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+.chatItem p {
+    margin: 0; /* Remove default paragraph margin */
+    font-weight: normal; /* Default font weight */
+}
+
+.chatItem p.bold {
+    font-weight: bold; /* Bold font weight for unread messages */
+}
