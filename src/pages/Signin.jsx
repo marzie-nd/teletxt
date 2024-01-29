@@ -4,7 +4,7 @@ import Container from "../components/Container";
 import Button from "../components/Button";
 const Signin = () => {
   return (
-    <Container title={'TeleTxt'} subtitle={'Sign In'}>
+    <Container className="container" title={'TeleTxt'} subtitle={'Sign In'}>
       <form>
         <input type="text" placeholder="Username" />
         <input type="password" placeholder="Password" />
