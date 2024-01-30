@@ -1,4 +1,3 @@
-import ChatItem from "../components/ChatItem";
 import ChatList from "../components/ChatList";
 import Header from "../components/Header";
 import Search from "../components/Search";
@@ -16,14 +15,10 @@ const Chats = () => {
       <Header />
       <Search />
       <div>
-        {!selectedUser ? (
-          <ChatPage />
+        {selectedUser ? (
+          <ChatPage user={selectedUser} />
         ) : (
-          // <ChatList>
-            <ChatItem users={users} hasUnread={true}>
-              Hello
-            </ChatItem>
-          // </ChatList>
+          <ChatList users={users} hasUnread={true} />
         )}
       </div>
     </div>

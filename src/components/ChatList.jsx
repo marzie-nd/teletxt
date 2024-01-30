@@ -1,9 +1,17 @@
-import ChatItem from "../components/ChatItem";
-const ChatList = ({children}) => {
+import './ChatList.scss'
+
+const ChatList = ({ users, name, hasUnread, children }) => {
   return (
-    <>
-      {children}
-    </>
+    <div className="chatList">
+      {users.map((user) => (
+        <div key={user} className="userItem">
+          <h4>{user}</h4>
+          <div style={{ fontWeight: hasUnread ? "bold" : "normal" }}>
+            {children}
+          </div>
+        </div>
+      ))}
+    </div>
   );
 };
 
