@@ -1,6 +1,6 @@
 import './ChatList.scss'
 
-const ChatList = ({ users, name, hasUnread, children }) => {
+const ChatList = ({ users, hasUnread, children }) => {
   return (
     <div className="chatList">
       {users.map((user) => (
