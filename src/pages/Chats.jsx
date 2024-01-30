@@ -11,12 +11,13 @@ const Chats = () => {
   const [users, setUsers] = useState(["ahmad", "milad", "maman"]);
   const [selectedUser, setSelectedUser] = useState(users[0]);
   const [chatPage, setChatPage] = useState({});
+  const [chatHistory, setChatHistory] = useState({});
 
   const handleUserChange = (user) => {
     if (!chatPage[user]) {
       setChatPage({
         ...chatPage,
-        [user]: <ChatBox key={user} user={user} />,
+        [user]: <ChatBox key={user} user={user} chatHistory={chatHistory} />,
       });
     }
     setSelectedUser(user);
@@ -27,12 +28,14 @@ const Chats = () => {
       <Header />
       <Search />
       <div>
-        <div
-          value={selectedUser}
-          onChange={(e) => handleUserChange(e.target.value)}
-        >
+        <div>
           {users.map((user) => (
-            <div key={user} value={user} onClick={() => handleUserChange(user)}>
+            <div
+              key={user}
+              value={user}
+              className={`userItem ${user === selectedUser ? "selected" : ""}`}
+              onClick={() => handleUserChange(user)}
+            >
               {user}
             </div>
           ))}

@@ -1,14 +1,18 @@
-import { useState } from "react";
-import ChatHistory from "./ChatHistory";
-import MessageInput from "./MessageInput";
+import { useState, useEffect } from "react";
 
-const ChatBox = ({ user }) => {
+const ChatBox = ({ user, chatHistory }) => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
 
+  useEffect(() => {
+    setMessages(chatHistory[user] || [])
+  }, [user, chatHistory]);
+
   const handleSendMessage = () => {
     if (newMessage.trim() !== "") {
-      setMessages([...messages, { text: newMessage, user }]);
+      const updatedMessage = [...messages, {text: newMessage, user}];
+      setMessages(updatedMessage);
+      chatHistory[user] = updatedMessage;
       setNewMessage("");
     }
   };
@@ -21,7 +25,6 @@ const ChatBox = ({ user }) => {
 
   return (
     <div className="chatBox">
-      {user}
       <div>
         {messages.map((message, index) => (
           <div key={index}>{message.text}</div>
@@ -38,9 +41,6 @@ const ChatBox = ({ user }) => {
         <button onClick={handleSendMessage}>Send</button>
       </div>
 
-      {/* <h2>{user}</h2>
-      <ChatHistory user={user} messages={messages} />
-      <MessageInput /> */}
     </div>
   );
 };
