@@ -22,7 +22,7 @@ const handleSendMessage = () => {
         ))}
       </div>
       <div>
-        <input type='text' value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
+        <input type='text' value={newMessage} onChange={(e) => setNewMessage(e.target.value)} placeholder='Type a message...' />
         <button onClick={handleSendMessage}>Send</button>
       </div>
 

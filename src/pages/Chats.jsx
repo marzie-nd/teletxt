@@ -9,25 +9,30 @@ import "./Chats.scss";
 
 const Chats = () => {
   const [users, setUsers] = useState(["ahmad", "milad", "maman"]);
-  const [selectedUser, setSelectedUser] = useState(null); 
+  const [selectedUser, setSelectedUser] = useState(users[0]); 
 
   return (
     <div className="chats">
       <Header />
       <Search />
       <div>
+        <select value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)}>
         {users.map((user) => (
-          <ChatBox key={user} user={user} />
+          <option key={user} value={user}>
+            {user}
+          </option>
         ))}
-        
-        {/* {selectedUser ? (
-          <ChatPage users={users} selectedUser={selectedUser} />
-        ) : (
-          <ChatList users={users} hasUnread={true} />
-        )} */}
-      </div>
+        </select>
+        </div>
+          <ChatBox user={selectedUser} />
     </div>
   );
 };
 
 export default Chats;
+
+{/* {selectedUser ? (
+  <ChatPage users={users} selectedUser={selectedUser} />
+) : (
+  <ChatList users={users} hasUnread={true} />
+)} */}
