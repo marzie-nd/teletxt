@@ -1,46 +1,18 @@
 import { useState, useEffect } from "react";
+import ChatHistory from './ChatHistory';
+import MessageInput from './MessageInput';
 
-const ChatBox = ({ user, chatHistory }) => {
+const ChatBox = ({ user, chatHistory, onSendMessage }) => {
   const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState("");
 
   useEffect(() => {
     setMessages(chatHistory[user] || [])
   }, [user, chatHistory]);
 
-  const handleSendMessage = () => {
-    if (newMessage.trim() !== "") {
-      const updatedMessage = [...messages, {text: newMessage, user}];
-      setMessages(updatedMessage);
-      chatHistory[user] = updatedMessage;
-      setNewMessage("");
-    }
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSendMessage();
-    }
-  };
-
   return (
     <div className="chatBox">
-      <div>
-        {messages.map((message, index) => (
-          <div key={index}>{message.text}</div>
-        ))}
-      </div>
-      <div>
-        <input
-          type="text"
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-          onKeyDown={handleKeyPress}
-          placeholder="Type a message..."
-        />
-        <button onClick={handleSendMessage}>Send</button>
-      </div>
-
+      <ChatHistory messages={messages} user={user} />
+      <MessageInput onSendMessage={(message) => onSendMessage(message, user)} />
     </div>
   );
 };

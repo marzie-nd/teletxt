@@ -1,47 +1,40 @@
 import ChatList from "../components/ChatList";
 import Header from "../components/Header";
 import Search from "../components/Search";
-import ChatPage from "../components/ChatPage";
 import ChatBox from "../components/ChatBox";
 import { useState } from "react";
 
 import "./Chats.scss";
 
 const Chats = () => {
-  const [users, setUsers] = useState(["ahmad", "milad", "maman"]);
+  const users = ["ahmad", "milad", "maman"];
   const [selectedUser, setSelectedUser] = useState(users[0]);
-  const [chatPage, setChatPage] = useState({});
   const [chatHistory, setChatHistory] = useState({});
 
   const handleUserChange = (user) => {
-    if (!chatPage[user]) {
-      setChatPage({
-        ...chatPage,
-        [user]: <ChatBox key={user} user={user} chatHistory={chatHistory} />,
+    if (!chatHistory[user]) {
+      setChatHistory({
+        ...chatHistory,
+        [user]: []
       });
     }
     setSelectedUser(user);
   };
 
+  const handleSendMessage = (message, user) => {
+    const updatedMessages = [...chatHistory[user], {text: message, user}];
+    setChatHistory({
+      ...chatHistory,
+      [user]: updatedMessages
+    })
+  }
+
   return (
     <div className="chats">
       <Header />
       <Search />
-      <div>
-        <div>
-          {users.map((user) => (
-            <div
-              key={user}
-              value={user}
-              className={`userItem ${user === selectedUser ? "selected" : ""}`}
-              onClick={() => handleUserChange(user)}
-            >
-              {user}
-            </div>
-          ))}
-        </div>
-      </div>
-      {chatPage[selectedUser]}
+      <ChatList users={users} selectedUser={selectedUser} onUserChange={handleUserChange} />
+      <ChatBox user={selectedUser} chatHistory={chatHistory} onSendMessage={handleSendMessage} />
     </div>
   );
 };

@@ -1,14 +1,15 @@
-import './ChatList.scss'
+import "./ChatList.scss";
 
-const ChatList = ({ users, hasUnread, children }) => {
+const ChatList = ({ users, selectedUser, onUserChange }) => {
   return (
     <div className="chatList">
       {users.map((user) => (
-        <div key={user} className="userItem">
+        <div
+          key={user}
+          className={`userItem ${user === selectedUser ? "selected" : ""}`}
+          onClick={() => onUserChange(user)}
+        >
           <h4>{user}</h4>
-          <div style={{ fontWeight: hasUnread ? "bold" : "normal" }}>
-            {children}
-          </div>
         </div>
       ))}
     </div>

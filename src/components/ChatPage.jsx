@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import ChatBox from './ChatBox';
 
 const ChatPage = ({ users, selectedUser }) => {

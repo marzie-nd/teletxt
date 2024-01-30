@@ -1,12 +1,10 @@
-import React from 'react'
-
 const ChatHistory = ({ messages, user }) => {
   return (
     <div className='chatHistory'>
       {
         messages.map((message, index) => (
           <div key={index}>
-            {message.user}: {message.text}
+            {message.text}
           </div>
         ))
       }
@@ -14,4 +12,4 @@ const ChatHistory = ({ messages, user }) => {
   )
 }
 
-export default ChatHistory
+export default ChatHistory;
