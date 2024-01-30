@@ -4,8 +4,12 @@
     justify-content: space-around;
     background-color: #5f6f52;
     gap: 1rem;
+    font-family: "European Teletext" !important;
 }
 
-h1 {
+.header div {
     color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.2rem;
 }

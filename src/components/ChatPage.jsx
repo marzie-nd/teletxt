@@ -5,7 +5,7 @@ const ChatPage = ({ users, selectedUser, onUserChange, chatHistory, onSendMessag
   if (!selectedUser) {
     return (
       <div className='chatPage_chatList'>
-        <ChatList user={selectedUser} />      
+        <ChatList users={users} onUserChange={onUserChange} />      
       </div>
     )
   }

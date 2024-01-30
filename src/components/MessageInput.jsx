@@ -21,6 +21,7 @@ const MessageInput = ({ onSendMessage }) => {
       <button
         onClick={() => {
           onSendMessage(newMessage);
+          setNewMessage("");
         }}
       >
         send

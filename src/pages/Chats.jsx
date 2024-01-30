@@ -1,7 +1,6 @@
 import ChatList from "../components/ChatList";
 import Header from "../components/Header";
 import Search from "../components/Search";
-import ChatBox from "../components/ChatBox";
 import ChatPage from "../components/ChatPage";
 import { useState } from "react";
 
