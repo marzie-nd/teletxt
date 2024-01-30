@@ -2,13 +2,14 @@ import ChatList from "../components/ChatList";
 import Header from "../components/Header";
 import Search from "../components/Search";
 import ChatBox from "../components/ChatBox";
+import ChatPage from "../components/ChatPage";
 import { useState } from "react";
 
 import "./Chats.scss";
 
 const Chats = () => {
   const users = ["ahmad", "milad", "maman"];
-  const [selectedUser, setSelectedUser] = useState(users[0]);
+  const [selectedUser, setSelectedUser] = useState(null);
   const [chatHistory, setChatHistory] = useState({});
 
   const handleUserChange = (user) => {
@@ -33,8 +34,19 @@ const Chats = () => {
     <div className="chats">
       <Header />
       <Search />
-      <ChatList users={users} selectedUser={selectedUser} onUserChange={handleUserChange} />
-      <ChatBox user={selectedUser} chatHistory={chatHistory} onSendMessage={handleSendMessage} />
+
+      {selectedUser ? (
+        <ChatPage
+          selectedUser={selectedUser}
+          users={users}
+          onUserChange={handleUserChange}
+          chatHistory={chatHistory}
+          onSendMessage={handleSendMessage}
+        />
+      ) : (
+        <ChatList users={users} onUserChange={handleUserChange} />
+
+      )}
     </div>
   );
 };
