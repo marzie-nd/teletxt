@@ -16,36 +16,40 @@ const Chats = () => {
     if (!chatHistory[user]) {
       setChatHistory({
         ...chatHistory,
-        [user]: []
+        [user]: [],
       });
     }
     setSelectedUser(user);
   };
 
   const handleSendMessage = (message, user) => {
-    const updatedMessages = [...chatHistory[user], {text: message, user}];
+    const updatedMessages = [...chatHistory[user], { text: message, user }];
     setChatHistory({
       ...chatHistory,
-      [user]: updatedMessages
-    })
-  }
+      [user]: updatedMessages,
+    });
+  };
 
   return (
     <div className="chats">
-      <Header />
-      <Search />
-
       {selectedUser ? (
-        <ChatPage
-          selectedUser={selectedUser}
-          users={users}
-          onUserChange={handleUserChange}
-          chatHistory={chatHistory}
-          onSendMessage={handleSendMessage}
-        />
-      ) : (
-        <ChatList users={users} onUserChange={handleUserChange} />
+        <>
+          <Header headerTitle={selectedUser} />
 
+          <ChatPage
+            selectedUser={selectedUser}
+            users={users}
+            onUserChange={handleUserChange}
+            chatHistory={chatHistory}
+            onSendMessage={handleSendMessage}
+          />
+        </>
+      ) : (
+        <>
+          <Header headerTitle="TeLeTxt" />
+          <Search />
+          <ChatList users={users} onUserChange={handleUserChange} />
+        </>
       )}
     </div>
   );

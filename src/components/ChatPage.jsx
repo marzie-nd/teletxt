@@ -11,7 +11,6 @@ const ChatPage = ({ users, selectedUser, onUserChange, chatHistory, onSendMessag
   }
   return (
     <div className='chatPage_chatBox'>
-      <h2>{selectedUser}</h2>
       <ChatBox user={selectedUser} chatHistory={chatHistory} onSendMessage={onSendMessage} />      
     </div>
   )
