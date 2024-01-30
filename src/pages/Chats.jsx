@@ -15,8 +15,8 @@ const Chats = () => {
       <Header />
       <Search />
       <div>
-        {selectedUser ? (
-          <ChatPage user={selectedUser} />
+        {!selectedUser ? (
+          <ChatPage users={users} selectedUser={selectedUser} />
         ) : (
           <ChatList users={users} hasUnread={true} />
         )}

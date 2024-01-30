@@ -1,15 +1,12 @@
 import { useState } from 'react';
-import ChatHistory from './ChatHistory';
-import MessageInput from './MessageInput';
+import ChatBox from './ChatBox';
 
-const ChatPage = ({ user, selectedUser }) => {
-  const [messages, setMessages] = useState([]);
+const ChatPage = ({ users, selectedUser }) => {
   
   return (
     <div className='chatPage'>
       <h2>{selectedUser}</h2>
-      <ChatHistory messages={messages} user={user} />
-      <MessageInput />
+      <ChatBox user={selectedUser} />      
     </div>
   )
 }

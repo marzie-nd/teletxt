@@ -1,9 +1,15 @@
 import React from 'react'
 
-const ChatHistory = () => {
+const ChatHistory = ({ messages, user }) => {
   return (
-    <div>
-      
+    <div className='chatHistory'>
+      {
+        messages.map((message, index) => (
+          <div key={index}>
+            {message.user}: {message.text}
+          </div>
+        ))
+      }
     </div>
   )
 }
