@@ -8,13 +8,14 @@ const [newMessage, setNewMessage] = useState('');
 
 const handleSendMessage = () => {
   if (newMessage.trim() !== '') {
-    setMessages([...messages, {text:newMessage}]);
+    setMessages([...messages, {text:newMessage, user}]);
     setNewMessage('');
   }
 }
 
   return (
     <div className='chatBox'>
+      {user}
       <div>
         {messages.map((message, index) => (
           <div key={index}>{message.text}</div>

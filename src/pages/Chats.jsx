@@ -16,7 +16,10 @@ const Chats = () => {
       <Header />
       <Search />
       <div>
-        <ChatBox />
+        {users.map((user) => (
+          <ChatBox key={user} user={user} />
+        ))}
+        
         {/* {selectedUser ? (
           <ChatPage users={users} selectedUser={selectedUser} />
         ) : (
