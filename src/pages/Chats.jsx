@@ -16,7 +16,7 @@ const Chats = () => {
       <Header />
       <Search />
       <div>
-        {selectedUser ? (
+        {!selectedUser ? (
           <ChatPage />
         ) : (
           // <ChatList>

@@ -1,9 +1,13 @@
 import React from 'react'
 
-const ChatPage = () => {
+const ChatPage = ({ selectedUser, messages }) => {
   return (
-    <div>
-      Hello World!
+    <div className='chatPage'>
+      <h2>{selectedUser}</h2>
+      <p>{messages}</p>
+      <input type='text'
+      placeholder='Type a message...' />
+      <button>send</button>
     </div>
   )
 }
