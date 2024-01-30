@@ -1,33 +1,31 @@
 import ChatItem from "../components/ChatItem";
-import ChatList from "../components/ChatList"
+import ChatList from "../components/ChatList";
 import Header from "../components/Header";
 import Search from "../components/Search";
-import { useState } from 'react';
+import ChatPage from "../components/ChatPage";
+import { useState } from "react";
 
-import './Chats.scss'
+import "./Chats.scss";
 
 const Chats = () => {
-
+  const [users, setUsers] = useState(["ahmad", "milad", "maman"]);
   const [selectedUser, setSelectedUser] = useState(null);
 
   return (
-    
-    <div className='chats'>
-      <Header/>
-      <Search/>
+    <div className="chats">
+      <Header />
+      <Search />
       <div>
-        {!selectedUser ? (
-          <h1 style={{color: "black"}}>Hello world</h1>
+        {selectedUser ? (
+          <ChatPage />
         ) : (
-          <ChatList>
-          <ChatItem name={'Maman'} hasUnread={true}>Where are you?</ChatItem>
-          <ChatItem name={'Ahmad'} hasUnread={false}>Hello</ChatItem>
-        </ChatList>
-        )
-      }
+          // <ChatList>
+            <ChatItem users={users} hasUnread={true}>
+              Hello
+            </ChatItem>
+          // </ChatList>
+        )}
       </div>
-
-      
     </div>
   );
 };
