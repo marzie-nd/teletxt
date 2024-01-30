@@ -1,20 +1,26 @@
-import { useState } from 'react'
-import ChatHistory from './ChatHistory';
-import MessageInput from './MessageInput';
+import { useState } from "react";
+import ChatHistory from "./ChatHistory";
+import MessageInput from "./MessageInput";
 
 const ChatBox = ({ user }) => {
-const [messages, setMessages] = useState([]);
-const [newMessage, setNewMessage] = useState('');
+  const [messages, setMessages] = useState([]);
+  const [newMessage, setNewMessage] = useState("");
 
-const handleSendMessage = () => {
-  if (newMessage.trim() !== '') {
-    setMessages([...messages, {text:newMessage, user}]);
-    setNewMessage('');
-  }
-}
+  const handleSendMessage = () => {
+    if (newMessage.trim() !== "") {
+      setMessages([...messages, { text: newMessage, user }]);
+      setNewMessage("");
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSendMessage();
+    }
+  };
 
   return (
-    <div className='chatBox'>
+    <div className="chatBox">
       {user}
       <div>
         {messages.map((message, index) => (
@@ -22,17 +28,21 @@ const handleSendMessage = () => {
         ))}
       </div>
       <div>
-        <input type='text' value={newMessage} onChange={(e) => setNewMessage(e.target.value)} placeholder='Type a message...' />
+        <input
+          type="text"
+          value={newMessage}
+          onChange={(e) => setNewMessage(e.target.value)}
+          onKeyDown={handleKeyPress}
+          placeholder="Type a message..."
+        />
         <button onClick={handleSendMessage}>Send</button>
       </div>
-
-
 
       {/* <h2>{user}</h2>
       <ChatHistory user={user} messages={messages} />
       <MessageInput /> */}
     </div>
-  )
-}
+  );
+};
 
-export default ChatBox
+export default ChatBox;

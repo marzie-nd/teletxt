@@ -13,36 +13,34 @@ const Chats = () => {
   const [chatPage, setChatPage] = useState({});
 
   const handleUserChange = (user) => {
-    if(!chatPage[user]) {
+    if (!chatPage[user]) {
       setChatPage({
-        ...chatPage, [user]: <ChatBox key={user} user={user} />
-      })
+        ...chatPage,
+        [user]: <ChatBox key={user} user={user} />,
+      });
     }
     setSelectedUser(user);
-  }
+  };
 
   return (
     <div className="chats">
       <Header />
       <Search />
       <div>
-        <select value={selectedUser} onChange={(e) => handleUserChange(e.target.value)}>
-        {users.map((user) => (
-          <option key={user} value={user}>
-            {user}
-          </option>
-        ))}
-        </select>
+        <div
+          value={selectedUser}
+          onChange={(e) => handleUserChange(e.target.value)}
+        >
+          {users.map((user) => (
+            <div key={user} value={user} onClick={() => handleUserChange(user)}>
+              {user}
+            </div>
+          ))}
         </div>
-          {chatPage[selectedUser]}
+      </div>
+      {chatPage[selectedUser]}
     </div>
   );
 };
 
 export default Chats;
-
-{/* {selectedUser ? (
-  <ChatPage users={users} selectedUser={selectedUser} />
-) : (
-  <ChatList users={users} hasUnread={true} />
-)} */}
