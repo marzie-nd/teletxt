@@ -1,7 +1,7 @@
 import ChatBox from './ChatBox';
 import ChatList from './ChatList';
 
-const ChatPage = ({ users, selectedUser, onUserChange, chatHistory, onSendMessage }) => {
+const ChatPage = ({ users, selectedUser, onUserChange, chatHistory, onSendMessage, onBack }) => {
   if (!selectedUser) {
     return (
       <div className='chatPage_chatList'>
@@ -11,6 +11,7 @@ const ChatPage = ({ users, selectedUser, onUserChange, chatHistory, onSendMessag
   }
   return (
     <div className='chatPage_chatBox'>
+      <button onClick={onBack}>back</button>
       <ChatBox user={selectedUser} chatHistory={chatHistory} onSendMessage={onSendMessage} />      
     </div>
   )

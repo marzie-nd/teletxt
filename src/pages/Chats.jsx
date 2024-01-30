@@ -30,6 +30,10 @@ const Chats = () => {
     });
   };
 
+  const handleBack = () => {
+    setSelectedUser(null);
+  }
+
   return (
     <div className="chats">
       {selectedUser ? (
@@ -42,6 +46,7 @@ const Chats = () => {
             onUserChange={handleUserChange}
             chatHistory={chatHistory}
             onSendMessage={handleSendMessage}
+            onBack={handleBack}
           />
         </>
       ) : (
