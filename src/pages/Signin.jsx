@@ -11,7 +11,7 @@ const Signin = () => {
         <Link to="/chats">
           <Button>Sign In</Button>
         </Link>
-        <Link to="/forgetpasssword" underline="hover" className="lnk">
+        <Link to="/forgetpasssword" underline="hover">
           {"Forgot password?"}
         </Link>
         <Link to="/signup" underline="hover" className="lnk">

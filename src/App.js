@@ -8,7 +8,7 @@ import Button from "./components/Button";
 
 const App = () => {
   return (
-    <Container className="welcome" title={'TeleTxt'} subtitle={''}>
+    <Container title={'TeleTxt'} subtitle={''}>
       <img src={Img} width="200px" alt="logo" />
       <p>
         Exercitation qui in nisi ullamco ullamco ad esse fugiat pariatur ex ex

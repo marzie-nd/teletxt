@@ -38,7 +38,6 @@ const Chats = () => {
       {selectedUser ? (
         <>
           <Header headerTitle={selectedUser} />
-
           <ChatPage
             selectedUser={selectedUser}
             users={users}
