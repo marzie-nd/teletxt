@@ -29,52 +29,39 @@ const AddUser = ({ onAddUser }) => {
 
   return (
     <div className="addUser">
-      <div className="container">
-        {isAddingUser ? (
-          <form
-            onSubmit={handleSubmit}
-            style={{ position: "relative", display: "flex" }}
-          >
-            <input
-              type="text"
-              placeholder="Enter new username"
-              value={newUser}
-              onChange={handleInputChange}
-              onBlur={handleBlur}
-              autoFocus
-            />
-            <button
-              type="submit"
-              style={{
-                backgroundColor: "transparent",
-                padding: "0",
-                margin: "0",
-              }}
-            >
-              <img
-                src={Img}
-                alt="add new user"
-                style={{ width: "60px", position: "fixed" }}
-              />
-            </button>
-          </form>
-        ) : (
+      {isAddingUser ? (
+        <form onSubmit={handleSubmit} style={{}}>
+          <input
+            type="text"
+            placeholder="Enter new username"
+            value={newUser}
+            onChange={handleInputChange}
+            onBlur={handleBlur}
+            autoFocus
+          />
           <button
-            onClick={handleAddButtonClick}
+            type="submit"
             style={{
               backgroundColor: "transparent",
               padding: "0",
               margin: "0",
             }}
           >
-            <img
-              src={Img}
-              alt="add new user"
-              style={{ width: "60px", position: "fixed" }}
-            />
+            <img src={Img} alt="add new user" style={{ width: "60px" }} />
           </button>
-        )}
-      </div>
+        </form>
+      ) : (
+        <button
+          onClick={handleAddButtonClick}
+          style={{
+            backgroundColor: "transparent",
+            padding: "0",
+            margin: "0",
+          }}
+        >
+          <img src={Img} alt="add new user" style={{ width: "60px" }} />
+        </button>
+      )}
     </div>
   );
 };
