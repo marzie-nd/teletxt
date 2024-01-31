@@ -5,7 +5,7 @@ import ChatPage from "../components/ChatPage";
 import { useState } from "react";
 
 const Chats = () => {
-  const users = ["ahmad", "milad", "maman"];
+  const [users, setUsers] = useState(["ahmad", "milad", "maman"]);
   const [selectedUser, setSelectedUser] = useState(null);
   const [chatHistory, setChatHistory] = useState({});
   const [isVisible, setIsVisible] = useState(true);
@@ -30,31 +30,43 @@ const Chats = () => {
 
   const handleBack = () => {
     setSelectedUser(null);
-  }
+  };
 
   const toggleVisible = () => {
     setIsVisible(!isVisible);
-  }
+  };
+
+  const handleAddUser = (newUser) => {
+    setUsers([...users, newUser]);
+  };
 
   return (
     <div className="chats">
       {selectedUser ? (
         <>
-          <Header headerTitle={selectedUser} onBack={handleBack} toggleVisible={toggleVisible}  />
+          <Header
+            headerTitle={selectedUser}
+            onBack={handleBack}
+            toggleVisible={toggleVisible}
+          />
           <ChatPage
             selectedUser={selectedUser}
             users={users}
             onUserChange={handleUserChange}
             chatHistory={chatHistory}
             onSendMessage={handleSendMessage}
-            // onBack={handleBack}
           />
         </>
       ) : (
         <>
           <Header headerTitle="TeLeTxt" onBack={`{style: display:"none"}`} />
           <Search />
-          <ChatList users={users} onUserChange={handleUserChange} />
+          <ChatList
+            users={users}
+            selectedUser={selectedUser}
+            onUserChange={handleUserChange}
+            onAddUser={handleAddUser}
+          />
         </>
       )}
     </div>

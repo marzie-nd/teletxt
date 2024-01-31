@@ -1,6 +1,7 @@
+import AddUser from "../components/AddUser";
 import "./ChatList.scss";
 
-const ChatList = ({ users, selectedUser, onUserChange }) => {
+const ChatList = ({ users, selectedUser, onUserChange, onAddUser }) => {
   return (
     <div className="chatList">
       {users.map((user) => (
@@ -12,6 +13,7 @@ const ChatList = ({ users, selectedUser, onUserChange }) => {
           <h4>{user}</h4>
         </div>
       ))}
+      <AddUser onAddUser={onAddUser} />
     </div>
   );
 };
