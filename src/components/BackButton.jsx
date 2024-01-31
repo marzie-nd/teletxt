@@ -1,4 +1,3 @@
-import './BackButton.scss';
 import Img from '../img/up.png';
 
 const BackButton = ({ onBack }) => {

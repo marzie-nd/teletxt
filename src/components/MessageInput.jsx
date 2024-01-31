@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "./MessageInput.scss";
+import Img from "../img/send.png";
 
 const MessageInput = ({ onSendMessage }) => {
   const [newMessage, setNewMessage] = useState("");
@@ -10,21 +12,34 @@ const MessageInput = ({ onSendMessage }) => {
     }
   };
   return (
-    <div className="messageInput">
+    <div className="messageInput" style={{ borderButtom: "1px solid red" }}>
       <input
         type="text"
         value={newMessage}
         onChange={(e) => setNewMessage(e.target.value)}
         onKeyDown={handleKeyPress}
         placeholder="Type a message..."
+        style={{
+          borderBottom: "none"
+        }}
       />
       <button
         onClick={() => {
           onSendMessage(newMessage);
           setNewMessage("");
         }}
+        style={{
+          backgroundColor: "transparent",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        send
+        <img
+          src={Img}
+          alt="send"
+          style={{ width: "20px", position: "absolute" }}
+        />
       </button>
     </div>
   );
