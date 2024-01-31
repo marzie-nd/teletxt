@@ -7,13 +7,15 @@
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .userItem {
     border-bottom: 0.5px solid lightgray;
     display: flex;
     align-items: center;
-    gap: 20px;height: 3rem;
+    gap: 20px;
+    height: 3rem;
     justify-content: space-between;
 }
 

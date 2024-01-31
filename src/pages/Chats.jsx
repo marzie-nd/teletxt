@@ -4,8 +4,6 @@ import Search from "../components/Search";
 import ChatPage from "../components/ChatPage";
 import { useState } from "react";
 
-import './Chats.scss';
-
 const Chats = () => {
   const [users, setUsers] = useState(["ahmad", "milad", "maman"]);
   const [selectedUser, setSelectedUser] = useState(null);
