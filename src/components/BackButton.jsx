@@ -8,7 +8,7 @@ const BackButton = ({ onBack }) => {
         <img
         src={Img} 
         alt='back'
-        style={{width: "30px"}}
+        style={{width: "35px"}}
         />
       </button>
     </div>
