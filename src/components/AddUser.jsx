@@ -28,19 +28,32 @@ const AddUser = ({ onAddUser }) => {
   };
 
   return (
-    <div className="addUser">
-      {isAddingUser ? (
-        <form onSubmit={handleSubmit} style={{}}>
-          <input
-            type="text"
-            placeholder="Enter new username"
-            value={newUser}
-            onChange={handleInputChange}
-            onBlur={handleBlur}
-            autoFocus
-          />
+    <div className="covering">
+      <div className="addUser">
+        {isAddingUser ? (
+          <form onSubmit={handleSubmit} style={{}}>
+            <input
+              type="text"
+              placeholder="Enter new username"
+              value={newUser}
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              autoFocus
+            />
+            <button
+              type="submit"
+              style={{
+                backgroundColor: "transparent",
+                padding: "0",
+                margin: "0",
+              }}
+            >
+              <img src={Img} alt="add new user" style={{ width: "60px" }} />
+            </button>
+          </form>
+        ) : (
           <button
-            type="submit"
+            onClick={handleAddButtonClick}
             style={{
               backgroundColor: "transparent",
               padding: "0",
@@ -49,19 +62,8 @@ const AddUser = ({ onAddUser }) => {
           >
             <img src={Img} alt="add new user" style={{ width: "60px" }} />
           </button>
-        </form>
-      ) : (
-        <button
-          onClick={handleAddButtonClick}
-          style={{
-            backgroundColor: "transparent",
-            padding: "0",
-            margin: "0",
-          }}
-        >
-          <img src={Img} alt="add new user" style={{ width: "60px" }} />
-        </button>
-      )}
+        )}
+      </div>
     </div>
   );
 };
