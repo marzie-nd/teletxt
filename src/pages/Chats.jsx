@@ -37,19 +37,19 @@ const Chats = () => {
     <div className="chats">
       {selectedUser ? (
         <>
-          <Header headerTitle={selectedUser} />
+          <Header headerTitle={selectedUser} onBack={handleBack} />
           <ChatPage
             selectedUser={selectedUser}
             users={users}
             onUserChange={handleUserChange}
             chatHistory={chatHistory}
             onSendMessage={handleSendMessage}
-            onBack={handleBack}
+            // onBack={handleBack}
           />
         </>
       ) : (
         <>
-          <Header headerTitle="TeLeTxt" />
+          <Header headerTitle="TeLeTxt" onBack={`{style: display:"none"}`} />
           <Search />
           <ChatList users={users} onUserChange={handleUserChange} />
         </>
