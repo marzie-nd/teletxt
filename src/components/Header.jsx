@@ -1,12 +1,10 @@
-import Back from "./Back";
 import "./Header.scss";
 
-const Header = ({ headerTitle, onBack, toggleVisible }) => {
+const Header = ({children}) => {
 
   return (
     <div className="header">
-      {toggleVisible && <Back onBack={onBack}/>}
-      <div>{headerTitle}</div>
+      {children}
     </div>
   );
 };

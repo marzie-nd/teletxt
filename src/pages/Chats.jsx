@@ -1,8 +1,10 @@
+import { useState } from "react";
 import ChatList from "../components/ChatList";
+import ChatPage from "../components/ChatPage";
 import Header from "../components/Header";
 import Search from "../components/Search";
-import ChatPage from "../components/ChatPage";
-import { useState } from "react";
+import Back from "../components/Back"
+import "./Chats.scss";
 
 const Chats = () => {
   const [users, setUsers] = useState(["ahmad", "milad", "maman"]);
@@ -44,7 +46,7 @@ const Chats = () => {
     const newUser = users.filter((user) => user !== userToDelete);
     setUsers(newUser);
 
-    const {[userToDelete]: deletedUserHistory, ...remainingChatHistory} = chatHistory;
+    const { [userToDelete]: deletedUserHistory, ...remainingChatHistory } = chatHistory;
     setChatHistory(remainingChatHistory);
 
     if (selectedUser === userToDelete) {
@@ -56,11 +58,10 @@ const Chats = () => {
     <div className="chats">
       {selectedUser ? (
         <>
-          <Header
-            headerTitle={selectedUser}
-            onBack={handleBack}
-            toggleVisible={toggleVisible}
-          />
+          <Header>
+            <Back onBack={handleBack}></Back>
+            <h1>{selectedUser}</h1>
+          </Header>
           <ChatPage
             selectedUser={selectedUser}
             users={users}
@@ -71,7 +72,7 @@ const Chats = () => {
         </>
       ) : (
         <>
-          <Header headerTitle="TeLeTxt" onBack={`{style: display:"none"}`} />
+          <Header><h1>TeleTxt</h1></Header>
           <Search />
           <ChatList
             users={users}
