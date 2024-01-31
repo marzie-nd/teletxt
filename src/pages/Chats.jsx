@@ -42,6 +42,18 @@ const Chats = () => {
     setUsers([...users, newUser]);
   };
 
+  const handleDeleteUser = (userToDelete) => {
+    const newUser = users.filter((user) => user !== userToDelete);
+    setUsers(newUser);
+
+    const {[userToDelete]: deletedUserHistory, ...remainingChatHistory} = chatHistory;
+    setChatHistory(remainingChatHistory);
+
+    if (selectedUser === userToDelete) {
+      setSelectedUser(null);
+    }
+  }
+
   return (
     <div className="chats">
       {selectedUser ? (
@@ -68,6 +80,7 @@ const Chats = () => {
             selectedUser={selectedUser}
             onUserChange={handleUserChange}
             onAddUser={handleAddUser}
+            onDeleteUser={handleDeleteUser}
           />
         </>
       )}
