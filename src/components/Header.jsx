@@ -5,8 +5,8 @@ const Header = ({ headerTitle, onBack, toggleVisible }) => {
 
   return (
     <div className="header">
-        {toggleVisible && <BackButton onBack={onBack}/>}
       <div>{headerTitle}</div>
+      {toggleVisible && <BackButton onBack={onBack}/>}
     </div>
   );
 };

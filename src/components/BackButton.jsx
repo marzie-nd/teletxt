@@ -1,9 +1,16 @@
-import React from "react";
+import './BackButton.scss';
+import Img from '../img/up.png';
 
 const BackButton = ({ onBack }) => {
   return (
-    <div>
-      <button onClick={onBack}>back</button>
+    <div className="backButton">
+      <button onClick={onBack} style={{backgroundColor: "transparent", padding: '0', margin: '0'}}>
+        <img
+        src={Img} 
+        alt='back'
+        style={{width: "30px"}}
+        />
+      </button>
     </div>
   );
 };
