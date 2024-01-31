@@ -10,6 +10,7 @@ const Chats = () => {
   const users = ["ahmad", "milad", "maman"];
   const [selectedUser, setSelectedUser] = useState(null);
   const [chatHistory, setChatHistory] = useState({});
+  const [isVisible, setIsVisible] = useState(true);
 
   const handleUserChange = (user) => {
     if (!chatHistory[user]) {
@@ -33,11 +34,15 @@ const Chats = () => {
     setSelectedUser(null);
   }
 
+  const toggleVisible = () => {
+    setIsVisible(!isVisible);
+  }
+
   return (
     <div className="chats">
       {selectedUser ? (
         <>
-          <Header headerTitle={selectedUser} onBack={handleBack} />
+          <Header headerTitle={selectedUser} onBack={handleBack} toggleVisible={toggleVisible}  />
           <ChatPage
             selectedUser={selectedUser}
             users={users}

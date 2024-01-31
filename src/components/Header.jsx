@@ -1,18 +1,11 @@
 import BackButton from "./BackButton";
-import { useState } from 'react';
 import "./Header.scss";
 
-const Header = ({ headerTitle, onBack }) => {
-
-    const [isVisible, setIsVisible] = useState(true);
-
-    const toggleVisible = () => {
-        setIsVisible(!isVisible);
-      }
+const Header = ({ headerTitle, onBack, toggleVisible }) => {
 
   return (
     <div className="header">
-        <BackButton onBack={onBack}/>
+        {toggleVisible && <BackButton onBack={onBack}/>}
       <div>{headerTitle}</div>
     </div>
   );
