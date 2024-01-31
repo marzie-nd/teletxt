@@ -59,7 +59,7 @@ const Chats = () => {
       {selectedUser ? (
         <>
           <Header>
-            <Back onBack={handleBack}></Back>
+            <Back onClick={handleBack}></Back>
             <h1>{selectedUser}</h1>
           </Header>
           <ChatPage

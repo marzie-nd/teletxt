@@ -1,10 +1,10 @@
 import Img from '../img/back.png';
 import "./Back.scss"
 
-const Back = ({ onBack }) => {
+const Back = ({ onClick }) => {
   return (
     <div className="back">
-        <img onClick={onBack}
+        <img onClick={onClick}
           src={Img}
           alt='back'
         />
