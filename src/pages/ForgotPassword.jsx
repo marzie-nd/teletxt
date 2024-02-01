@@ -14,7 +14,7 @@ const ForgotPassword = () => {
 
     return (
         <div className="forgotPassword">
-            <Container title="Reset Password">
+            <Container title="TeLeTxt" subtitle="Reset Password">
                 <form onSubmit={handleSubmit}>
                     <input
                         type="email"
@@ -23,7 +23,7 @@ const ForgotPassword = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <Button type="submit">Send Reset Link</Button>
+                    <Button type="submit">Send Reset Password</Button>
                     <Link to="/signin" className="link">Back to sign in</Link>
                 </form>
             </Container>

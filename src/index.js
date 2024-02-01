@@ -15,9 +15,9 @@ root.render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App />} />
+                <Route path="/signup" element={<Signup />} />
                 <Route path="/signin" element={<Signin />} />
                 <Route path="/forgotpassword" element={<ForgotPassword />} />
-                <Route path="/signup" element={<Signup />} />
                 <Route path="/chats" element={<Chats />} />
                 <Route path="/chats/:chatId" element={<Chat />} />
             </Routes>
