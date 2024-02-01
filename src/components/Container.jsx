@@ -1,4 +1,4 @@
-import "./Container.scss"
+import "./Container.scss";
 
 const Container = ({ title, subtitle, children }) => {
     return (

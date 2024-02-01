@@ -1,6 +1,6 @@
 import "./Header.scss";
 
-const Header = ({children}) => {
+const Header = ({ children }) => {
 
   return (
     <div className="header">

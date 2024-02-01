@@ -1,0 +1,25 @@
+.chat-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    height: 4rem;
+    padding-left: 1rem;
+    border-bottom: 1px solid #a9b388;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.unread {
+        p {
+            font-style: italic;
+        }
+    }
+
+    .delete {
+        margin: 0;
+        padding: 0;
+        scale: 0.25;
+        margin-left: auto;
+    }
+}

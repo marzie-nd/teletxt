@@ -1,0 +1,18 @@
+.message {
+    margin: 5px;
+    padding: 15px;
+    border-radius: 10px;
+
+    &.sender {
+        background-color: #d1e7dd;
+    }
+
+    &.receiver {
+        background-color: #f8d7da;
+    }
+
+    p {
+        margin: 0;
+        font-size: 16px;
+    }
+}

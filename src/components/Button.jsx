@@ -1,11 +1,9 @@
-import "./Button.scss"
+import "./Button.scss";
 const Button = ({ children }) => {
     return (
-        <div>
-            <button>
-                {children}
-            </button>
-        </div>
+        <button className="button">
+            {children}
+        </button>
     );
 };
 

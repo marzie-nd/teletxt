@@ -1,14 +1,12 @@
-import Img from '../img/back.png';
-import "./Back.scss"
+import ImageBack from '../images/back.png';
+import "./Back.scss";
 
 const Back = ({ onClick }) => {
   return (
-    <div className="back">
-        <img onClick={onClick}
-          src={Img}
-          alt='back'
-        />
-    </div>
+    <img className="back" onClick={onClick}
+      src={ImageBack}
+      alt='Back'
+    />
   );
 };
 

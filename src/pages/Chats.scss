@@ -1,5 +1,38 @@
-h1 {
-    color: white;
-    font-size: xx-large;
-    font-weight: 300;
+.chats {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    Header {
+        flex-shrink: 0;
+    }
+
+    .title {
+        color: white;
+        font-size: xx-large;
+        font-weight: 300;
+    }
+
+    .chatList {
+        // flex-grow: 1;
+        overflow-y: auto;
+    }
+
+    .search {
+        width: 100%;
+        flex-shrink: 0;
+        height: 3rem;
+        border: none;
+        box-sizing: border-box;
+        background-color: white;
+        outline: none;
+        border-bottom: 1px solid #a9b388;
+        padding-left: 1rem;
+        color: #783d19;
+        font-size: 18px;
+
+        &::placeholder {
+            color: #ad724da9;
+        }
+    }
 }

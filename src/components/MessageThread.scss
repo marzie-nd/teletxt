@@ -1,0 +1,20 @@
+.message-thread {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.message-container {
+    
+    max-width: 60%;
+
+    &.receiver {
+        align-self: flex-end;
+    }
+
+    .sender-name {
+        font-size: 0.9rem;
+        color: gray;
+    }
+}
