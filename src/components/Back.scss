@@ -1,7 +1,10 @@
-.back {
-    width: 30px;
-}
-
-.back:hover {
+.backButton {
     cursor: pointer;
-}
+    img {
+      width: 30px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  

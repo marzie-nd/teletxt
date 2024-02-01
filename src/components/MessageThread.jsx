@@ -1,13 +1,13 @@
 import React from 'react';
-import Message from './Message'; // Assuming Message.js is in the same directory
+import Message from './Message'; 
 import './MessageThread.scss';
 
 const MessageThread = ({ messages, currentUserId, senderName }) => {
     return (
-        <div className="message-thread">
+        <div className="messageThread">
             {messages.map(msg => (
-                <div className={`message-container ${currentUserId !== msg.senderId ? 'sender' : 'receiver'}`}>
-                    {currentUserId !== msg.senderId && (<span className="sender-name">{senderName}</span>)}
+                <div className={`messageContainer ${msg.senderId === currentUserId ? 'sender' : 'receiver'}`}>
+                    {msg.senderId !== currentUserId && <span className="senderName">{senderName}</span>}
                     <Message text={msg.text} isSender={msg.senderId === currentUserId} />
                 </div>
             ))}

@@ -1,12 +1,13 @@
-import "./Header.scss";
+import React from 'react';
+import './Header.scss';
 
 const Header = ({ children }) => {
-
   return (
-    <div className="header">
+    <header className="customHeader">
       {children}
-    </div>
+    </header>
   );
 };
 
 export default Header;
+

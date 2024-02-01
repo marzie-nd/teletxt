@@ -1,19 +1,19 @@
-.button {
+.customButton {
     background-color: #c4661f;
-    color: white;
-    font-size: 18px;
     border: none;
     padding: 15px 25px;
     border-radius: 8px;
+    color: white;
     cursor: pointer;
+    font-size: 18px;
     transition: background-color 0.3s ease;
-}
 
-.button:hover {
-    background-color: #b3561a;
-}
+    &:hover {
+        background-color: #b3561a;
+    }
 
-.button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #c4661f;
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px #c4661f;
+    }
 }

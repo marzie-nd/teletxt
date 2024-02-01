@@ -1,14 +1,23 @@
 .app {
-
-  img {
+  .logo {
     width: 200px;
     border-radius: 50%;
+    margin-bottom: 20px; // Added margin for better spacing
   }
 
-  p {
+  .description {
     text-align: center;
     font-size: 18px;
     max-width: 480px;
+    margin-bottom: 20px; // Added margin for better spacing
   }
 
+  .link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+  }
 }

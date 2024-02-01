@@ -1,3 +1,4 @@
+import React from 'react';
 import ChatItem from "../components/ChatItem";
 import Header from "../components/Header";
 import "./Chats.scss";
@@ -27,15 +28,15 @@ const Chats = () => {
     { 'id': 892, 'name': 'Emily', 'lastMessage': "I've sent you the playlist.", 'isUnread': true }
   ];
 
-
   return (
     <div className='chats'>
-      <Header><h1 className="title">TeleTxt</h1></Header>
+      <Header>
+        <h1 className="title">TeleTxt</h1>
+      </Header>
       <input className='search' type="text" placeholder='Search...' />
       <div className="chatList">
         {chats.map(chat => (
           <ChatItem
-            key={chat.id}
             id={chat.id}
             name={chat.name}
             content={chat.lastMessage}

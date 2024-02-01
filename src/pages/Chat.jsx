@@ -1,15 +1,18 @@
+import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import ImageSend from '../images/send.png';
 import "./Chat.scss";
 import MessageThread from '../components/MessageThread';
-import Back from "../components/Back"
-import Header from "../components/Header"
+import Back from "../components/Back";
+import Header from "../components/Header";
 
 const Chat = () => {
     const { chatId } = useParams();
+    const navigate = useNavigate();
 
     const currentUserId = 1;
     const senderName = "Alice";
+
     const conversation = [
         { senderId: 1, text: "Hey, how are you?" },
         { senderId: 2, text: "I'm good, thanks! How about you?" },
@@ -33,23 +36,22 @@ const Chat = () => {
         { senderId: 2, text: "Absolutely, let's plan for that!" }
     ];
 
-    const navigate = useNavigate();
     const handleBack = () => {
         navigate(`/chats`);
-    }
+    };
 
     return (
-        <>
+        <div className="chatContainer">
             <Header>
                 <Back onClick={handleBack} />
-                <h1>{senderName}</h1>
+                <h1 className="headerTitle">{senderName}</h1>
             </Header>
-            <MessageThread className="chat" messages={conversation} currentUserId={currentUserId} senderName={senderName} />
-            <div className="write">
+            <MessageThread messages={conversation} currentUserId={currentUserId} senderName={senderName} />
+            <div className="messageInput">
                 <input type="text" placeholder="Type a message..." />
-                <img src={ImageSend} alt="Send" />
+                <img src={ImageSend} alt="Send" className="sendIcon" />
             </div>
-        </>
+        </div>
     );
 };
 

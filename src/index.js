@@ -7,6 +7,7 @@ import Chat from './pages/Chat';
 import Chats from './pages/Chats';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
+import ForgotPassword from './pages/ForgotPassword';
 
 const root = createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +16,7 @@ root.render(
             <Routes>
                 <Route path="/" element={<App />} />
                 <Route path="/signin" element={<Signin />} />
+                <Route path="/forgotpassword" element={<ForgotPassword />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/chats" element={<Chats />} />
                 <Route path="/chats/:chatId" element={<Chat />} />

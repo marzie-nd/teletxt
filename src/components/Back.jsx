@@ -1,13 +1,13 @@
+import React from 'react';
 import ImageBack from '../images/back.png';
 import "./Back.scss";
 
-const Back = ({ onClick }) => {
+function Back({ onClick }) {
   return (
-    <img className="back" onClick={onClick}
-      src={ImageBack}
-      alt='Back'
-    />
+    <div className="backButton" onClick={onClick}>
+      <img src={ImageBack} alt='Back' />
+    </div>
   );
-};
+}
 
 export default Back;

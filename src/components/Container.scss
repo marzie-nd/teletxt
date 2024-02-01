@@ -7,15 +7,22 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+}
 
-  h1 {
-    font-size: 40px;
-    font-weight: bold;
-    color: #5f6f52;
-  }
+.containerTitle {
+  font-size: 40px;
+  font-weight: bold;
+  color: #5f6f52;
+}
 
-  h2 {
-    font-size: 1.5em;
-    color: #5f6f52;
-  }
+.containerSubtitle {
+  font-size: 1.5em;
+  color: #5f6f52;
+}
+
+.containerContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
