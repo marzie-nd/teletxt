@@ -10,10 +10,6 @@
         cursor: pointer;
     }
 
-    &.unread .chatContent {
-        // font-style: italic;
-    }
-
     .chatContent {
         white-space: nowrap;
         overflow: hidden;
@@ -24,7 +20,7 @@
         background-color: #C4661F;
         color: white;
         padding: 4px 8px;
-        font-size: 12px;
+        font-size: 15px;
         border-radius: 50%;
     }
 
