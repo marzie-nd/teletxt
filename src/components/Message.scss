@@ -3,21 +3,35 @@
     padding: 15px;
     border-radius: 10px;
     word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 
     &.sender {
         background-color: #FFF7C1;
         align-self: flex-end; 
         color: #C4661F;
+
+        span {
+            color: #c4671f9a;
+        }
+
     }
 
     &.receiver {
         background-color: #D6DFB7;
         align-self: flex-start; 
         color: #47543C;
+
+        span {
+            color: #47543c96;
+        }
     }
 
     p {
         margin: 0;
         font-size: 16px;
     }
+    
+    
 }
