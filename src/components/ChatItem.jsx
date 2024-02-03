@@ -13,7 +13,9 @@ const ChatItem = ({ id, name, content, isUnread }) => {
         <div className={`chatItem ${isUnread ? 'unread' : ''}`} onClick={handleClick}>
             <h4>{name}</h4>
             <p className="chatContent">{content}</p>
+            {isUnread && <div className='unreadBadge'>unread</div>}
             <img className='delete' src={deleteIcon} alt="Delete" />
+            
         </div>
     );
 }
