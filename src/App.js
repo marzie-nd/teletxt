@@ -16,7 +16,7 @@ const App = () => {
           enim labore. Laboris aliquip est reprehenderit reprehenderit quis
           aliquip id enim labore.
         </p>
-        <Link to="/signup">
+        <Link to="/signup" className="link">
           <Button>Start Messaging</Button>
         </Link>
       </Container>
