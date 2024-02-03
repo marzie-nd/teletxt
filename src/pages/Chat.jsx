@@ -43,8 +43,8 @@ const Chat = () => {
     return (
         <div className="chatContainer">
             <Header>
-                <Back onClick={handleBack} />
                 <h1 className="headerTitle">{senderName}</h1>
+                <Back onClick={handleBack} />
             </Header>
             <MessageThread messages={conversation} currentUserId={currentUserId} senderName={senderName} />
             <div className="messageInput">
