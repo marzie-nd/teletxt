@@ -1,23 +1,26 @@
 .message {
-    margin: 5px;
-    padding: 15px;
-    border-radius: 10px;
-    word-wrap: break-word;
+  margin: 5px;
+  padding: 15px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 
-    &.sender {
-        background-color: #FFF7C1;
-        align-self: flex-end; 
-        color: #C4661F;
-    }
+  &.sender {
+    background-color: #fff7c1;
+    align-self: flex-end;
+    color: #c4661f;
+  }
 
-    &.receiver {
-        background-color: #D6DFB7;
-        align-self: flex-start; 
-        color: #47543C;
-    }
+  &.receiver {
+    background-color: #d6dfb7;
+    align-self: flex-start;
+    color: #47543c;
+  }
 
-    p {
-        margin: 0;
-        font-size: 16px;
-    }
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
 }
