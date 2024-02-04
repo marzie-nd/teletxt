@@ -5,15 +5,13 @@
     word-wrap: break-word;
 
     &.sender {
-        background-color: #FFF7C1;
+        background-color: #d1e7dd;
         align-self: flex-end; 
-        color: #C4661F;
     }
 
     &.receiver {
-        background-color: #D6DFB7;
+        background-color: #f8d7da;
         align-self: flex-start; 
-        color: #47543C;
     }
 
     p {
