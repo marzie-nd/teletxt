@@ -46,7 +46,9 @@ const Chat = () => {
                 <Back onClick={handleBack} />
                 <h1 className="headerTitle">{senderName}</h1>
             </Header>
-            <MessageThread messages={conversation} currentUserId={currentUserId} senderName={senderName} />
+            <div className='messageThreadContainer'>
+                <MessageThread messages={conversation} currentUserId={currentUserId} senderName={senderName} />
+            </div>
             <div className="messageInput">
                 <input type="text" placeholder="Type a message..." />
                 <img src={ImageSend} alt="Send" className="sendIcon" />
