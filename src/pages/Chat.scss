@@ -4,8 +4,8 @@
     height: 100%;
 }
 
-.messageThread{
-    height: calc(100vh - 14rem);
+.messageThreadContainer{
+    height: calc(100vh - 4rem - 4rem);
     overflow: auto;
 }
 
