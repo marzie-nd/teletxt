@@ -2,6 +2,7 @@ import React from 'react';
 import ChatItem from "../components/ChatItem";
 import Header from "../components/Header";
 import "./Chats.scss";
+import AddUser from '../components/AddUser';
 
 const Chats = () => {
 
@@ -44,6 +45,7 @@ const Chats = () => {
             unreadMessage={chat.unreadMessage}
           />
         ))}
+        <AddUser />
       </div>
     </div>
   );
