@@ -9,24 +9,13 @@
     gap: 5px;
 
     &.sender {
-        background-color: #FFF7C1;
+        background-color: #d1e7dd;
         align-self: flex-end; 
-        color: #C4661F;
-
-        span {
-            color: #c4671f9a;
-        }
-
     }
 
     &.receiver {
-        background-color: #D6DFB7;
+        background-color: #f8d7da;
         align-self: flex-start; 
-        color: #47543C;
-
-        span {
-            color: #47543c96;
-        }
     }
 
     p {
