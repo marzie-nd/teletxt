@@ -8,7 +8,7 @@ const MessageThread = ({ messages, currentUserId, senderName }) => {
             {messages.map(msg => (
                 <div className={`messageContainer ${msg.senderId === currentUserId ? 'sender' : 'receiver'}`}>
                     {msg.senderId !== currentUserId && <span className="senderName">{senderName}</span>}
-                    <Message text={msg.text} isSender={msg.senderId === currentUserId} />
+                    <Message text={msg.text} timeStamp={msg.timeStamp} isSender={msg.senderId === currentUserId} />
                 </div>
             ))}
         </div>
