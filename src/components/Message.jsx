@@ -3,15 +3,14 @@ import './Message.scss';
 
 const Message = ({ text, timeStamp, isSender }) => {
 
-    let date = new Date (timeStamp);
-    date = `${date.getHours()}:${date.getMinutes()}`;
-    console.log(date);
+    const [hours, minutes] = timeStamp.split(' ')[4].split(':');
+    const time = `${hours}:${minutes}`;
+    console.log(time);
     
-
     return (
         <div className={`message ${isSender ? 'sender' : 'receiver'}`}>
             <p>{text}</p>
-            <span>{date}</span>
+            <span>{time}</span>
         </div>
     );
 };
