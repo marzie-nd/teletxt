@@ -1,10 +1,11 @@
 import React from 'react';
-import './Message.scss';
 
 const Message = ({ text, timeStamp, isSender }) => {
 
-    const [hours, minutes] = timeStamp.split(' ')[4].split(':');
-    const time = `${hours}:${minutes}`;
+    let time = new Date(timeStamp);
+    time = time.toLocaleString();
+    const [hours, minutes] = time.split(' ')[1].split(':');
+    time = `${hours}:${minutes}`;
     console.log(time);
     
     return (

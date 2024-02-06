@@ -23,7 +23,7 @@ const ForgotPassword = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <Link to="#" onSubmit={handleSubmit}>Send Reset Password</Link>
+                    <Button type="submit">Send Reset Password</Button>
                     <Link to="/signin" className="link">Back to sign in</Link>
                 </form>
             </Container>

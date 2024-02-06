@@ -10,14 +10,18 @@
         cursor: pointer;
     }
 
-    &.unread .chatContent {
-        font-style: italic;
-    }
-
     .chatContent {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    .unreadBadge {
+        background-color: #C4661F;
+        color: white;
+        padding: 4px 8px;
+        font-size: 15px;
+        border-radius: 50%;
     }
 
     .delete {
