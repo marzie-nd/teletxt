@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import "./ChatItem.scss";
 import deleteIcon from '../images/delete.png';
 
-const ChatItem = ({ id, name, content, isUnread, unreadMessage }) => {
+const ChatItem = ({ id, name, content, unreadMessage }) => {
     
     const navigate = useNavigate();
     const handleClick = () => {
@@ -10,7 +10,7 @@ const ChatItem = ({ id, name, content, isUnread, unreadMessage }) => {
     }
 
     return (
-        <div className={`chatItem ${isUnread ? 'unread' : ''}`} onClick={handleClick}>
+        <div className={`chatItem ${unreadMessage > 0 ? 'unread' : ''}`} onClick={handleClick}>
             <h4>{name}</h4>
             <p className="chatContent">{content}</p>
             {unreadMessage > 0 && <div className='unreadBadge'>{unreadMessage}</div>}
