@@ -1,4 +1,6 @@
+
 .app {
+  
   .logo {
     width: 200px;
     border-radius: 50%;
@@ -9,7 +11,8 @@
     text-align: center;
     font-size: 18px;
     max-width: 480px;
-    margin-bottom: 20px; // Added margin for better spacing
+    margin: 3rem 0 3rem 0;
+    text-wrap: wrap;
   }
 
   .link {
