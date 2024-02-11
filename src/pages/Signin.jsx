@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import Container from "../components/Container";
@@ -6,6 +6,10 @@ import "./Signin.scss";
 
 const Signin = () => {
   const navigate = useNavigate();
+  const [formInput, setFormInput] = useState({
+    username: "",
+    password: ""
+  });
 
   const handleSignIn = (event) => {
     event.preventDefault();
@@ -16,7 +20,7 @@ const Signin = () => {
     <div className="signin">
       <Container title="TeleTxt" subtitle="Sign In">
         <form onSubmit={handleSignIn}>
-          <input type="text" placeholder="Username" required/>
+          <input type="text" value='username' placeholder="Username" required/>
           <input type="password" placeholder="Password" required/>
           <Button type="submit">Sign In</Button>
           <Link to="/forgotpassword" className="link">Forgot password?</Link>
@@ -26,5 +30,10 @@ const Signin = () => {
     </div>
   );
 };
+
+
+Signin.propTypes = {
+
+}
 
 export default Signin;
