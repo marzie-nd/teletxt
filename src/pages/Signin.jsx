@@ -6,6 +6,7 @@ import "./Signin.scss";
 
 const Signin = () => {
   const navigate = useNavigate();
+
   const [formInput, setFormInput] = useState({
     username: "",
     password: "",
@@ -16,6 +17,7 @@ const Signin = () => {
     password: "",
   });
 
+
   const handleUserInput = (name, value) => {
     setFormInput({
       ...formInput,
@@ -25,6 +27,14 @@ const Signin = () => {
 
   const handleSignIn = (event) => {
     event.preventDefault();
+
+    const lower = new RegExp("(?=.*[a-z])");
+    const upper = new RegExp("(?=.*[A-Z])");
+    const number = new RegExp("(?=.*[0-9])");
+    const special = new RegExp("(?=.*[!@#$%^&*])");
+    const passwordLength = new RegExp("(?=.{12,})");
+    const usernameLength = new RegExp("(?=.{7,})");
+
     let inputError = {
       username: "",
       password: "",
@@ -49,6 +59,62 @@ const Signin = () => {
       setFormError({
         ...inputError,
         password: "Password required",
+      });
+      return;
+    }
+    if (!lower.test(formInput.password)) {
+      setFormError({
+        ...inputError,
+        password: "Your password must contain at least one lowercase letter",
+      });
+      return;
+    }
+    if (!upper.test(formInput.password)) {
+      setFormError({
+        ...inputError,
+        password: "Your password must contain at least one uppercase letter",
+      });
+      return;
+    }
+    if (!number.test(formInput.password)) {
+      setFormError({
+        ...inputError,
+        password: "Your password must contain at least one number",
+      });
+      return;
+    }
+    if (!special.test(formInput.password)) {
+      setFormError({
+        ...inputError,
+        password: "Your password must contain at least one special character",
+      });
+      return;
+    }
+    if (!passwordLength.test(formInput.password)) {
+      setFormError({
+        ...inputError,
+        password: "Your password must contain at least 12 character",
+      });
+      return;
+    }
+    if (!lower.test(formInput.username)) {
+      setFormError({
+        ...inputError,
+        username: "Your username must contain at least one lowercase letter",
+      });
+      return;
+    }
+    if (!upper.test(formInput.username)) {
+      setFormError({
+        ...inputError,
+        username: "Your username must contain at least on uppercase letter",
+      });
+      return;
+    }
+    if (!usernameLength.test(formInput.username)) {
+      setFormError({
+        ...inputError,
+        username: "Your username must contain at least 7 character",
       });
       return;
     }
@@ -94,7 +160,5 @@ const Signin = () => {
     </div>
   );
 };
-
-Signin.propTypes = {};
 
 export default Signin;
