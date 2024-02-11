@@ -2,10 +2,14 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import Container from "../components/Container";
+import ShowPass from "../images/show.png";
+import HidePass from "../images/hide.png";
 import "./Signin.scss";
 
 const Signin = () => {
   const navigate = useNavigate();
+  const [visible, setVisible] = useState(false);
+
 
   const [formInput, setFormInput] = useState({
     username: "",
@@ -137,15 +141,21 @@ const Signin = () => {
           />
           <p className="errorMessage">{formError.username}</p>
           {/* /////////////////// */}
+          <div className="wrapper">
           <input
-            type="text"
-            placeholder="Password"
+              type={visible ? "text" : "password"}
+              placeholder="Password"
             value={formInput.password}
             onChange={({ target }) => {
               handleUserInput(target.name, target.value);
             }}
             name="password"
           />
+          <div onClick={() => setVisible(!visible)}>
+              {visible ? <img src={ShowPass} /> : <img src={HidePass} />}
+            </div>
+          </div>
+          
           <p className="errorMessage">{formError.password}</p>
           
           <Button type="submit">Sign In</Button>

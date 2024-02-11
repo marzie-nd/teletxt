@@ -2,10 +2,13 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import Container from "../components/Container";
+import ShowPass from "../images/show.png";
+import HidePass from "../images/hide.png";
 import "./Signup.scss";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [visible, setVisible] = useState(false);
 
   const [formInput, setFormInput] = useState({
     username: "",
@@ -146,26 +149,37 @@ const Signup = () => {
           />
           <p className="errorMessage">{formError.username}</p>
           {/* /////////////////// */}
-          <input
-            type="text"
-            placeholder="Password"
-            value={formInput.password}
-            onChange={({ target }) => {
-              handleUserInput(target.name, target.value);
-            }}
-            name="password"
-          />
+          <div className="wrapper">
+            <input
+              type={visible ? "text" : "password"}
+              placeholder="Password"
+              value={formInput.password}
+              onChange={({ target }) => {
+                handleUserInput(target.name, target.value);
+              }}
+              name="password"
+            />
+            <div onClick={() => setVisible(!visible)}>
+              {visible ? <img src={ShowPass} /> : <img src={HidePass} />}
+            </div>
+          </div>
+
           <p className="errorMessage">{formError.password}</p>
           {/* /////////////////// */}
-          <input
-            type="confirmPassword"
-            placeholder="Confirm password"
-            value={formInput.confirmPassword}
-            onChange={({ target }) => {
-              handleUserInput(target.name, target.value);
-            }}
-            name="confirmPassword"
-          />
+          <div className="wrapper">
+            <input
+              type={visible ? "text" : "password"}
+              placeholder="Confirm password"
+              value={formInput.confirmPassword}
+              onChange={({ target }) => {
+                handleUserInput(target.name, target.value);
+              }}
+              name="confirmPassword"
+            />
+            <div onClick={() => setVisible(!visible)}>
+              {visible ? <img src={ShowPass} /> : <img src={HidePass} />}
+            </div>
+          </div>
           <p className="errorMessage">{formError.conFirmPassword}</p>
 
           <div className="separator">
