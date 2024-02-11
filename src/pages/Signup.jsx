@@ -44,7 +44,7 @@ const Signup = () => {
     }
     if (!formInput.username) {
       setFormError({
-        ...inputError,  
+        ...inputError,
         username: "Username required",
       });
       return;
